@@ -1,0 +1,11 @@
+* {
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    background-color: hsl(185, 41%, 84%);
+}
+
+.container {
+    display: flex;
+}
