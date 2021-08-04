@@ -10,31 +10,66 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/material-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/keyboard-styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="left">
-            <label for="bill">Bill</label>
-            <input type="text" class="input-field" id="bill">
-            <div class="tips">
-                Tip buttons
+    <main>
+        <!--<h1>Tip Calculator</h1>-->
+        <div class="container">
+            <div class="left">
+                <div class="bill">
+                    <label for="bill">Bill</label>
+                    <br>
+                    <input type="number" class="input-field use-keyboard-input" oninput="TipCalculator.checkLength(this);" id="bill">
+                    <button class="keyboard-btn">
+                        <span class="material-icons md-36">
+                            keyboard
+                        </span>
+                    </button>
+                    <span class="material-icons" id="money-icon">attach_money</span>
+                </div>
+                <div class="tips">
+                    <label for="buttons">Select Tip %</label>
+                    <br>
+                    <div class="buttons" id="buttons">
+                        <button value="5" onclick="TipCalculator.onSelectTip(this.value)";>5%</button>
+                        <button value="10" onclick="TipCalculator.onSelectTip(this.value)";>10%</button>
+                        <button value="15" onclick="TipCalculator.onSelectTip(this.value)";>15%</button>
+                        <button value="25" onclick="TipCalculator.onSelectTip(this.value)";>25%</button>
+                        <button value="50" onclick="TipCalculator.onSelectTip(this.value)";>50%</button>
+                        <button>Custom</button>
+                    </div>
+                </div>
+                <div class="people">
+                    <label for="number-of-people">Number of People</label>
+                    <br>
+                    <input type="number" class="input-field use-keyboard-input" oninput="TipCalculator.checkLength(this);" id="number-of-people">
+                    <span class="material-icons" id="people-icon">people</span>
+                </div>
+                <button class="btn" type="submit">calculate</button>
             </div>
-            <label for="number-of-people">Number of People</label>
-            <input type="text" class="input-field" id="number-of-people">
-        </div>
-        <div class="right">
-            <label for="tip-amount">Tip Amount <br>/ person</label>
-            <p class="amount" id="tip-amount">$4.27</p>
-            <label for="total">Total <br>/ person</label>
-            <p class="amount" id="total">$32.79</p>
-            <button class="btn" type="submit">reset</button>
-        </div>
-    </div>
+            <div class="right">
+                <div class="content">
+                    <div class="tip">
+                        <label for="tip-amount"><span class="cyan">Tip Amount</span> <br><span class="dark-cyan">/ person</span></label>
+                        <p class="tip-amount" id="tip-amount">$0.00</p>
+                    </div>
+                    <div class="total">
+                        <label for="total-amount"><span class="cyan">Total</span> <br><span class="dark-cyan">/ person</span></label>
+                        <p class="total-amount" id="total-amount">$0.00</p>
+                    </div>
+                    <button class="btn right-btn" type="submit">reset</button>
+                </div>
 
+            </div>
+        </div>
+    </main>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/keyboard.js"></script>
 </body>
 
 </html>
