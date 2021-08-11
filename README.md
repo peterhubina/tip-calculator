@@ -1,5 +1,5 @@
 # Tip Calculator App
-With this app you can calculate your tip amount. Used technologies: HTML5, CSS3, Javascript.
+With this app you can calculate your tip amount. Used technologies: HTML5, CSS3, Sass, Javascript.
 
 This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX).
 
