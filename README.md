@@ -44,6 +44,6 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Peter Hubina](https://www.your-site.com)
+- GitHub - [@peterhubina](https://github.com/peterhubina/)
 - Twitter - [@hubina_peter](https://twitter.com/hubina_peter)
 
