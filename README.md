@@ -33,7 +33,7 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 Markup
-- CSS custom properties
+- Sass pre-processor
 - Flexbox
 - Mobile-first workflow
 - Vanilla Javascript
