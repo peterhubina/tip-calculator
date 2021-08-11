@@ -3,7 +3,8 @@ const TipCalculator = {
         tip_amount: null,
         total_amount: null,
         bill_input: null,
-        people_input: null
+        people_input: null,
+        custom: null
     },
 
     values: {
@@ -22,6 +23,8 @@ const TipCalculator = {
 
         this.elements.tip_amount = document.getElementById("tip-amount");
         this.elements.total_amount = document.getElementById("total-amount");
+
+        this.elements.custom = document.getElementById("custom");
     },
 
     onSelectTip(value) {
@@ -38,6 +41,14 @@ const TipCalculator = {
         } else if(element.id == "number-of-people") {
             this.values.people = parseFloat(element.value);
         }
+
+        if(parseFloat(element.value) == 0) {
+            element.style.border = "2px solid red";
+        } else if(parseFloat(element.value) > 0) {
+            element.style.border = "2px solid green";
+        } else {
+            element.style.border = "";
+        }
     },
 
     calculate() {
@@ -48,11 +59,16 @@ const TipCalculator = {
             this.values.total_value = this.values.bill + tip;
             const totalPerPerson = this.values.total_value / this.values.people;
 
-            console.log(totalPerPerson);
             this.elements.total_amount.innerHTML = "$" + totalPerPerson.toFixed(2);
 
             this.elements.tip_amount.innerHTML = "$" + tipPerPerson.toFixed(2);
+        } else {    
+
         }
+    },
+
+    customTip(value) {
+        this.values.tip_percent = parseFloat(value);
     },
 
     reset() {
@@ -66,6 +82,11 @@ const TipCalculator = {
         this.elements.people_input.value = "";
         this.elements.tip_amount.textContent = "$0.00";
         this.elements.total_amount.textContent = "$0.00";
+        this.elements.custom.value = "";
+
+        this.elements.bill_input.style.border = "";
+        this.elements.custom.style.border = "";
+        this.elements.people_input.style.border = "";
     }
 };
 

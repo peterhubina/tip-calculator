@@ -1,0 +1,236 @@
+$primary-strong-cyan: hsl(172, 67%, 45%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$dark-grayish-cyan-2: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$light-grayish-cyan-2: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$border-radius: 5px;
+$button-height: 75px;
+
+* {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+}
+
+main {
+    display: grid;
+    place-items: center;
+
+    @media (min-width: 768px) {
+        height: 100vh;
+    }
+}
+
+body {
+    background-color: $light-grayish-cyan;
+}
+
+input {
+    box-sizing: border-box;
+    color: $very-dark-cyan;
+    font-weight: 700;
+}
+
+button {
+    font-weight: 500;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+::placeholder {
+    font-weight: 700;
+}
+
+
+label {
+    font-weight: 400;
+}
+
+.container {
+    width: 100%;
+    background-color: $white;
+    padding: 15px 0;
+    border-radius: 10px;
+    margin: 1.5em 0;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 576px) {
+        width: 90%;
+        padding: 15px;
+    }
+
+    @media (min-width: 768px) {
+        width: 75%;
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .input,
+    .output {
+        flex-basis: 100%;
+    }
+
+    .input {
+        margin: 30px;
+
+        .input-field {
+            padding: 0 10px;
+            width: calc(100% - 20px);
+            height: 50px;
+
+            text-align: right;
+            background-color: hsl(189, 41%, 97%);
+
+            border-radius: $border-radius;
+            border: 0;
+
+            color: $very-dark-cyan;
+        }
+
+        .keyboard-btn {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+            float: right;
+        }
+
+        .tips {
+            margin: 30px 0;
+
+            .buttons {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 15px;
+
+                font-size: 1.25em;
+
+                &>button,
+                input {
+                    flex-grow: 1;
+                    width: 25%;
+                    height: 75px;
+                    margin: 15px 15px 0 0;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: $very-dark-cyan;
+
+                    color: $white;
+                }
+
+                &>button {
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &:focus {
+                        background-color: $primary-strong-cyan;
+                        color: $very-dark-cyan;
+                    }
+                }
+
+                input {
+                    background-color: $light-grayish-cyan;
+                    color: $very-dark-cyan;
+                    text-align: center;
+
+                    @media (min-width: 768px) {
+                        font-size: .75em;
+                    }
+                }
+            }
+        }
+
+        .people {
+            position: relative;
+            bottom: 0;
+        }
+
+        .bill {
+            position: relative;
+        }
+
+        .bill,
+        .people {
+            label {
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+
+            #money-icon,
+            #people-icon {
+                position: absolute;
+                top: 60%;
+                left: 10px;
+            }
+        }
+    }
+
+    .output {
+        margin: 0;
+        border-radius: 15px;
+        background-color: $very-dark-cyan;
+        padding: 30px;
+
+        .content {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+
+            .tip,
+            .total {
+                margin-bottom: 25px;
+
+                .tip-amount,
+                .total-amount {
+                    color: $primary-strong-cyan;
+                    font-weight: 600;
+                    font-size: 2.5em;
+                }
+
+                p {
+                    display: inline-block;
+                    margin: 0;
+                }
+            }
+
+            .cyan {
+                color: hsl(189, 41%, 97%);
+            }
+
+            .dark-cyan {
+                color: hsl(184, 14%, 56%);
+            }
+        }
+    }
+
+    .btn {
+        display: block;
+        width: 75%;
+        height: $button-height;
+        margin: 10px auto 0 auto;
+
+        background-color: $primary-strong-cyan;
+
+        color: $very-dark-cyan;
+        text-transform: uppercase;
+        font-size: 1.25em;
+        font-weight: bold;
+
+        border: 0;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

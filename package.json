@@ -1,0 +1,23 @@
+{
+  "name": "tip-calculator-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -w scss -o css --output-style extended"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterhubina/tip-calculator.git"
+  },
+  "author": "Peter Hubina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterhubina/tip-calculator/issues"
+  },
+  "homepage": "https://github.com/peterhubina/tip-calculator#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
