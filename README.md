@@ -6,7 +6,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [Description](#description)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -15,7 +15,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ## Overview
 
-### The challenge
+### Description
 
 Users should be able to:
 
