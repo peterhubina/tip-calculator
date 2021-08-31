@@ -1,78 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tip Calculator App</title>
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="css/material-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/keyboard-styles.css">
-</head>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/material-icons.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <main>
-        <div class="container">
-            <div class="input">
-                <div class="bill">
-                    <label for="bill">Bill</label>
-                    <br>
-                    <input type="number" class="input-field use-keyboard-input" oninput="TipCalculator.valueChanged(this);" id="bill" placeholder="0">
-                    <button class="keyboard-btn">
-                        <span class="material-icons md-36">
-                            keyboard
-                        </span>
-                    </button>
-                    <span class="material-icons" id="money-icon">attach_money</span>
-                </div>
-                <div class="tips">
-                    <label for="buttons">Select Tip %</label>
-                    <br>
-                    <div class="buttons" id="buttons">
-                        <button value="5" onclick="TipCalculator.onSelectTip(this.value)";>5%</button>
-                        <button value="10" onclick="TipCalculator.onSelectTip(this.value)";>10%</button>
-                        <button value="15" onclick="TipCalculator.onSelectTip(this.value)";>15%</button>
-                        <button value="25" onclick="TipCalculator.onSelectTip(this.value)";>25%</button>
-                        <button value="50" onclick="TipCalculator.onSelectTip(this.value)";>50%</button>
-                        <input id="custom" type="number" placeholder="Custom" oninput="TipCalculator.valueChanged(this);TipCalculator.customTip(this.value);">
-                    </div>
-                </div>
-                <div class="people">
-                    <label for="number-of-people">Number of People</label>
-                    <br>
-                    <input type="number" class="input-field use-keyboard-input" oninput="TipCalculator.valueChanged(this);" id="number-of-people" placeholder="0">
-                    <button class="keyboard-btn">
-                        <span class="material-icons md-36">
-                            keyboard
-                        </span>
-                    </button>
-                    <span class="material-icons" id="people-icon">people</span>
-                </div>
-                <button class="btn" type="submit" onclick="TipCalculator.calculate();">calculate</button>
+      <div class="container">
+        <div class="input">
+          <div class="bill">
+            <label for="bill">Bill</label>
+            <br />
+            <input
+              type="number"
+              class="input-field"
+              oninput="TipCalculator.valueChanged(this)"
+              id="bill"
+              placeholder="0"
+            />
+            <span class="material-icons" id="money-icon">attach_money</span>
+          </div>
+          <div class="tips">
+            <label for="buttons">Select Tip %</label>
+            <br />
+            <div class="buttons" id="buttons">
+              <button
+                value="5"
+                onclick="TipCalculator.onSelectTip(this.value)"
+                ;
+              >
+                5%
+              </button>
+              <button
+                value="10"
+                onclick="TipCalculator.onSelectTip(this.value)"
+                ;
+              >
+                10%
+              </button>
+              <button
+                value="15"
+                onclick="TipCalculator.onSelectTip(this.value)"
+                ;
+              >
+                15%
+              </button>
+              <button
+                value="25"
+                onclick="TipCalculator.onSelectTip(this.value)"
+                ;
+              >
+                25%
+              </button>
+              <button
+                value="50"
+                onclick="TipCalculator.onSelectTip(this.value)"
+                ;
+              >
+                50%
+              </button>
+              <input
+                id="custom"
+                type="number"
+                placeholder="Custom"
+                oninput="() => {
+                    TipCalculator.valueChanged(this);
+                    TipCalculator.customTip(this.value);
+                }"
+              />
             </div>
-            <div class="output">
-                <div class="content">
-                    <div class="tip">
-                        <label for="tip-amount"><span class="cyan">Tip Amount</span> <br><span class="dark-cyan">/ person</span></label>
-                        <p class="tip-amount" id="tip-amount">$0.00</p>
-                    </div>
-                    <div class="total">
-                        <label for="total-amount"><span class="cyan">Total</span> <br><span class="dark-cyan">/ person</span></label>
-                        <p class="total-amount" id="total-amount">$0.00</p>
-                    </div>
-                    <button class="btn right-btn" type="submit" onclick="TipCalculator.reset();">reset</button>
-                </div>
-
-            </div>
+          </div>
+          <div class="people">
+            <label for="number-of-people">Number of People</label>
+            <br />
+            <input
+              type="number"
+              class="input-field"
+              oninput="TipCalculator.valueChanged(this)"
+              id="number-of-people"
+              placeholder="0"
+            />
+            <span class="material-icons" id="people-icon">people</span>
+          </div>
+          <button class="btn" type="submit" onclick="TipCalculator.calculate()">
+            calculate
+          </button>
         </div>
+        <div class="output">
+          <div class="content">
+            <div class="tip">
+              <label for="tip-amount"
+                ><span class="cyan">Tip Amount</span> <br /><span
+                  class="dark-cyan"
+                  >/ person</span
+                ></label
+              >
+              <p class="tip-amount" id="tip-amount">$0.00</p>
+            </div>
+            <div class="total">
+              <label for="total-amount"
+                ><span class="cyan">Total</span> <br /><span class="dark-cyan"
+                  >/ person</span
+                ></label
+              >
+              <p class="total-amount" id="total-amount">$0.00</p>
+            </div>
+            <button
+              class="btn right-btn"
+              type="submit"
+              onclick="TipCalculator.reset()"
+            >
+              reset
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
